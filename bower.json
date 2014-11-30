@@ -6,7 +6,7 @@
     "Dwan <me@dwaan.com>"
   ],
   "description": "Responsive popup library that easy to configure",
-  "main": "vendor/tshirt.popup/tshirt.popup.js",
+  "main": "tshirt.popup.js",
   "moduleType": [
     "globals"
   ],
