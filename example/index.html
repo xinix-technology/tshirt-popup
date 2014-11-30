@@ -1,0 +1,119 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+	<title>T-Shirt Pop Up Example</title>
+
+	<!-- Bare minimun javascript include -->
+	<script src="../vendor/jquery/dist/jquery.min.js" type="application/javascript"></script>
+	<script src="../tshirt-popup.js" type="application/javascript"></script>
+
+	<!-- Bare minimum CSS include -->
+	<link rel="stylesheet" href="../tshirt-popup.css" />
+
+	<!-- Additional CSS include -->
+	<link rel="stylesheet" href="../vendor/font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="../vendor/animate.css/animate.min.css" />
+	<link rel="stylesheet" href="../vendor/lato/css/lato.min.css" />
+
+	<!-- Custom CSS -->
+	<style type="text/css">
+		html,
+		body {
+			font: 16px/160%"Lato", sans-serif;
+			color: #333;
+		}
+		body {
+			width: 90%;
+			padding: 30px 0;
+			margin: 0 auto;
+		}
+		a {
+			color: #a00
+		}
+		.popupContent .content {
+			padding: 10px 20px
+		}
+		.customClass .content {
+			color: #f90;
+			padding: 20px 40px
+		}
+		@media only screen and (min-width: 767px) {
+			body {
+				width: 64%;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<h1>T-Shirt Pop Up</h1>
+	<p>By default, T-Shirt Pop Up rely on Font Awesome and Animate.css to add graphics and animation into the popup. It use minimal styling to easy overide the CSS. T-Shirt Pop Up design to load content for external link and append it into the document.</p>
+
+	<h2>Basic usages</h2>
+
+	<ol>
+		<li>
+			<p><a href="external.html" class="basicExample">Basic popup</a>. Just add the function to the jquery selector, it will take care everything.
+			</p>
+			<pre>
+$("a").popup();
+			</pre>
+		</li>
+		<li>
+			<p><a href="external.html" class="widthHeightExample">Popup with width and height</a>. By default, the popup will use the content width and height, you can either specific the width or height in the CSS or set the paramater like this:
+			</p>
+			<pre>
+$("a").popup({
+	width: 200,
+	height: 200
+});
+			</pre>
+		</li>
+		<li>
+			<p><a href="external.html" class="animationExample">Popup with different show animation</a>. For list of animation that you can use, please visit <a href="https://daneden.github.io/animate.css/" target="_BLANK">animate.css</a>.</p>
+			<pre>
+$("a").popup({
+	animation: "bounceInUp"
+});
+			</pre>
+		</li>
+		<li>
+			<p><a href="external.html" class="customClassExample">Basic popup with custom class</a>. You can set the content div class name into something that you  We style the content with orange color.</p>
+			<pre>
+$("a").popup({
+	className: "customClass"
+});
+			</pre>
+		</li>
+		<li>
+			<p><a href="404.html" class="basicExample">Loading something that unvailable</a> or <a href="http://google.com" class="basicExample">url from different domain</a> will produce a broken link window.</p>
+		</li>
+	</ol>
+</body>
+
+<script type="text/javascript">
+	$(function () {
+		$("a.basicExample").popup({
+			iconPrefix: "fa"
+		});
+		$("a.widthHeightExample").popup({
+			width: 200,
+			height: 200,
+			iconPrefix: "fa"
+		});
+		$("a.animationExample").popup({
+			iconPrefix: "fa",
+			animation: "bounceInUp"
+		});
+		$("a.customClassExample").popup({
+			iconPrefix: "fa",
+			className: "customClass"
+		});
+	});
+</script>
+
+</html>
