@@ -49,7 +49,7 @@
 							// Set Height and Width
 							console.log (settings);
 							if (settings.width != "auto") {
-								$("#" + settings.id + " > div > div > div > div").width (settings.height);
+								$("#" + settings.id + " > div > div > div > div").width (settings.width);
 							}
 							if (settings.height != "auto") {
 								$("#" + settings.id + " > div > div > div > div").height (settings.height);
