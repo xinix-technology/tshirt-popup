@@ -60,39 +60,38 @@
 			<p><a href="external.html" class="basicExample">Basic popup</a>. Just add the function to the jquery selector, it will take care everything.
 			</p>
 			<pre>
-$("a").popup();
-			</pre>
+$("a").popup();</pre>
 		</li>
 		<li>
 			<p><a href="external.html" class="widthHeightExample">Popup with width and height</a>. By default, the popup will use the content width and height, you can either specific the width or height in the CSS or set the paramater like this:
 			</p>
 			<pre>
 $("a").popup({
-	width: 200,
-	height: 200
-});
-			</pre>
+	width: 400,
+	height: 100
+});</pre>
 		</li>
 		<li>
 			<p><a href="external.html" class="animationExample">Popup with different show animation</a>. For list of animation that you can use, please visit <a href="https://daneden.github.io/animate.css/" target="_BLANK">animate.css</a>.</p>
 			<pre>
 $("a").popup({
 	animation: "bounceInUp"
-});
-			</pre>
+});</pre>
 		</li>
 		<li>
 			<p><a href="external.html" class="customClassExample">Basic popup with custom class</a>. You can set the content div class name into something that you  We style the content with orange color.</p>
 			<pre>
 $("a").popup({
 	className: "customClass"
-});
-			</pre>
+});</pre>
 		</li>
 		<li>
 			<p><a href="404.html" class="basicExample">Loading something that unvailable</a> or <a href="http://google.com" class="basicExample">url from different domain</a> will produce a broken link window.</p>
 		</li>
 	</ol>
+
+	<p>You can view the source code for more information about popup features.</p>
+	<p>&nbsp;</p>
 </body>
 
 <script type="text/javascript">
@@ -101,8 +100,8 @@ $("a").popup({
 			iconPrefix: "fa"
 		});
 		$("a.widthHeightExample").popup({
-			width: 200,
-			height: 200,
+			width: 400,
+			height: 100,
 			iconPrefix: "fa"
 		});
 		$("a.animationExample").popup({

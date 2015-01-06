@@ -47,9 +47,8 @@
 							$("#" + settings.id + " > div > div").html("<div id='popupContent' class='" + settings.className + "'><div class='content'><p class='loading'><i class='" + settings.iconPrefix +" " + settings.iconPrefix +"-circle-o-notch " + settings.iconPrefix +"-spin " + settings.iconPrefix +"-5x'></i></p></div></div>");
 							
 							// Set Height and Width
-							console.log (settings);
 							if (settings.width != "auto") {
-								$("#" + settings.id + " > div > div > div > div").width (settings.height);
+								$("#" + settings.id + " > div > div > div > div").width (settings.width);
 							}
 							if (settings.height != "auto") {
 								$("#" + settings.id + " > div > div > div > div").height (settings.height);
