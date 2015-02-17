@@ -63,6 +63,14 @@
 $("a").popup();</pre>
 		</li>
 		<li>
+			<p><a href="external-target.html" class="basicExampleTarget">Basic popup with target element on the external url</a>.
+			</p>
+			<pre>
+$("a").popup({
+	target: "#target"
+});</pre>
+		</li>
+		<li>
 			<p><a href="external.html" class="widthHeightExample">Popup with width and height</a>. By default, the popup will use the content width and height, you can either specific the width or height in the CSS or set the paramater like this:
 			</p>
 			<pre>
@@ -98,6 +106,10 @@ $("a").popup({
 	$(function () {
 		$("a.basicExample").popup({
 			iconPrefix: "fa"
+		});
+		$("a.basicExampleTarget").popup({
+			iconPrefix: "fa",
+			target: "#target"
 		});
 		$("a.widthHeightExample").popup({
 			width: 400,
