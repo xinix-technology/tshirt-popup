@@ -63,11 +63,19 @@
 $("a").popup();</pre>
 		</li>
 		<li>
-			<p><a href="external-target.html" class="basicExampleTarget">Basic popup with target element on the external url</a>.
+			<p><a href="external-target.html" class="basicExampleTarget">Basic popup with target element on the external url</a>. Sometimes you have very long external html and you want to load spesific DOM element.
 			</p>
 			<pre>
 $("a").popup({
 	target: "#target"
+});</pre>
+		</li>
+		<li>
+			<p><a href="external-target.html" class="basicIframe">Basic popup with iframe content external url</a>.
+			</p>
+			<pre>
+$("a").popup({
+	type: "iframe"
 });</pre>
 		</li>
 		<li>
@@ -96,6 +104,10 @@ $("a").popup({
 		<li>
 			<p><a href="404.html" class="basicExample">Loading something that unvailable</a> or <a href="http://google.com" class="basicExample">url from different domain</a> will produce a broken link window.</p>
 		</li>
+		<li>
+			<p><a href="https://www.youtube.com/watch?v=kt0g4dWxEBo" class="basicYoutube">We love youtube</a>. So we made our popup youtube aware.
+			</p>
+		</li>
 	</ol>
 
 	<p>You can view the source code for more information about popup features.</p>
@@ -111,6 +123,10 @@ $("a").popup({
 			iconPrefix: "fa",
 			target: "#target"
 		});
+		$("a.basicIframe").popup({
+			iconPrefix: "fa",
+			type: "iframe"
+		});
 		$("a.widthHeightExample").popup({
 			width: 400,
 			height: 100,
@@ -123,6 +139,9 @@ $("a").popup({
 		$("a.customClassExample").popup({
 			iconPrefix: "fa",
 			className: "customClass"
+		});
+		$("a.basicYoutube").popup({
+			iconPrefix: "fa"
 		});
 	});
 </script>
