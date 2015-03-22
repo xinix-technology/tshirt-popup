@@ -1,12 +1,12 @@
 {
   "name": "tshirt-popup",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/xinix-technology/tshirt-popup",
   "authors": [
     "Dwan <me@dwaan.com>"
   ],
   "description": "Responsive popup library that easy to configure",
-  "main": "tshirt.popup.js",
+  "main": "tshirt-popup.js",
   "moduleType": [
     "globals"
   ],
@@ -15,7 +15,7 @@
     "tshirt",
     "popup"
   ],
-  "license": "MIT",
+  "license": "Apache",
   "ignore": [
     "**/.*",
     "node_modules",
