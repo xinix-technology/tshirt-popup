@@ -34,15 +34,17 @@
 				url = settings.url;
 			}
 
-			// See if it's a youtube link
-			youtube_id = url.match(/(\?v=|\/\d\/|\/embed\/|\/v\/|\.be\/)([a-zA-Z0-9\-\_]+)/);
-			if (youtube_id !== null) {
-				settings.type = "iframe";
-			}
+			if (url !== undefined) {
+				// See if it's a youtube link
+				youtube_id = url.match(/(\?v=|\/\d\/|\/embed\/|\/v\/|\.be\/)([a-zA-Z0-9\-\_]+)/);
+				if (youtube_id !== null) {
+					settings.type = "iframe";
+				}
 
-			// If target is defined
-			if (settings.target !== "") {
-				url = url + " " + settings.target;
+				// If target is defined
+				if (settings.target !== "") {
+					url = url + " " + settings.target;
+				}
 			}
 
 			elem.click(function (e) {
@@ -50,10 +52,10 @@
 				if ($("#popupOverflow").length === 0) {
 					$("body").append("<div id='" + settings.id + "' style='display:none'><div id='popupTable'><div id='popupMargin'></div></div></div>");
 				}
-				
+
 				// Add loading content
 				$("#" + settings.id + " > div > div").html("<div id='popupContent' class='" + settings.className + "'><div class='content'><p class='loading'><i class='" + settings.iconPrefix +" " + settings.iconPrefix +"-circle-o-notch " + settings.iconPrefix +"-spin " + settings.iconPrefix +"-5x'></i></p></div></div>");
-				
+
 				// Set Height and Width
 				if (settings.width != "auto") {
 					$("#" + settings.id + " > div > div > div > div").width (settings.width);
@@ -61,7 +63,7 @@
 				if (settings.height != "auto") {
 					$("#" + settings.id + " > div > div > div > div").height (settings.height);
 				}
-				
+
 				// Draw close button
 				if (settings.closeButton) {
 					$("#" + settings.id + " > div > div > div").append("<a href='#' class='close'><i class='" + settings.iconPrefix +" " + settings.iconPrefix +"-close'></i></a>");
@@ -86,23 +88,27 @@
 
 				// Type of the popup is inline
 				if (settings.type === "inline") {
-					// Ajax call
-					$("#" + settings.id + " > div > div > div > div").load( url, function( response, status, xhr ) {
-						// Ir url is not found or connection is broken
-						if ( status === "error" ) {
-							if ($("#popupOverflow .close").length === 0) {
-								$("#" + settings.id + " > div > div > div").append("<a href='#' class='close'><i class='" + settings.iconPrefix +" " + settings.iconPrefix +"-close'></i></a>");
-								$("#" + settings.id + " .close").click(function (e) {
-									popup.close();
-									e.preventDefault();
-								});
-							}
+					if (url !== undefined) {
+						// Ajax call
+						$("#" + settings.id + " > div > div > div > div").load( url, function( response, status, xhr ) {
+							// Ir url is not found or connection is broken
+							if ( status === "error" ) {
+								if ($("#popupOverflow .close").length === 0) {
+									$("#" + settings.id + " > div > div > div").append("<a href='#' class='close'><i class='" + settings.iconPrefix +" " + settings.iconPrefix +"-close'></i></a>");
+									$("#" + settings.id + " .close").click(function (e) {
+										popup.close();
+										e.preventDefault();
+									});
+								}
 
-							$("#" + settings.id + " > div > div > div").addClass("animated " + settings.animation)
-							$("#" + settings.id + " > div > div > div > div").html("<p class='error'><i class='" + settings.iconPrefix +" " + settings.iconPrefix +"-chain-broken " + settings.iconPrefix +"-5x'></i><br />Error while loading your content<br />Please close this popup and try again</p>");
-						}
-					});
-				
+								$("#" + settings.id + " > div > div > div").addClass("animated " + settings.animation)
+								$("#" + settings.id + " > div > div > div > div").html("<p class='error'><i class='" + settings.iconPrefix +" " + settings.iconPrefix +"-chain-broken " + settings.iconPrefix +"-5x'></i><br />Error while loading your content<br />Please close this popup and try again</p>");
+							}
+						});
+					} else if (settings.target !== "") {
+						$("#" + settings.id + " > div > div > div > div").html($(settings.target).html ());
+					}
+
 
 				// Type of the popup is iframe
 				} else if (settings.type === "iframe") {
