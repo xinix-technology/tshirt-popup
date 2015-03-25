@@ -65,6 +65,18 @@
 $("a").popup();</pre>
 		</li>
 		<li>
+			<p><strong class="basicExampleInline">Basic popup</strong>. Displaying content from hidden element.
+			</p>
+			<div id="target" style="display:none">
+				<h1>Internal T-Shirt Pop Up</h1>
+				<p>These are examples for using tshirt popup. This one is internal element embeded into popup DOM.</p>
+			</div>
+			<pre>
+$("span").popup({
+	target: "#target"
+});</pre>
+		</li>
+		<li>
 			<p><a href="external-target.html" class="basicExampleTarget">Basic popup with target element on the external url</a>. Sometimes you have very long external html and you want to load spesific DOM element.
 			</p>
 			<pre>
@@ -120,6 +132,10 @@ $("a").popup({
 	$(function () {
 		$("a.basicExample").popup({
 			iconPrefix: "fa"
+		});
+		$(".basicExampleInline").popup({
+			iconPrefix: "fa",
+			target: "#target"
 		});
 		$("a.basicExampleTarget").popup({
 			iconPrefix: "fa",
