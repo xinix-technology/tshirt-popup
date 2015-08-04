@@ -14,7 +14,8 @@
 				width: "auto",
 				height: "auto",
 				closeButton: true,
-				disableTouchScroll: true
+				disableTouchScroll: true,
+				onClick: function () {}
 			},
 			popup = this,
 			settings = $.extend({}, defaults, options);
@@ -126,6 +127,8 @@
 
 				// Add animation
 				$("#" + settings.id + " > div > div > div").addClass("animated " + settings.animation);
+
+				settings.onClick ();
 
 				e.preventDefault();
 			});
