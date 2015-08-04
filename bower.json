@@ -6,7 +6,7 @@
     "Dwan <me@dwaan.com>"
   ],
   "description": "Responsive popup library that easy to configure",
-  "main": "tshirt.popup.js",
+  "main": "tshirt-popup.js",
   "moduleType": [
     "globals"
   ],
@@ -15,7 +15,7 @@
     "tshirt",
     "popup"
   ],
-  "license": "MIT",
+  "license": "Apache",
   "ignore": [
     "**/.*",
     "node_modules",
