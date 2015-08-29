@@ -27,7 +27,7 @@
   "devDependencies": {
     "jquery": "~2.1.1",
     "animate.css": "~3.2.0",
-    "font-awesome": "~4.4.0",
+    "jacket-awesome": "~2.0.x",
     "lato": "~0.2.2"
   }
 }

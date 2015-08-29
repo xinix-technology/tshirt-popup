@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="../tshirt-popup.css" />
 
 	<!-- Additional CSS include -->
-	<link rel="stylesheet" href="../vendor/font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="../vendor/jacket-awesome/dist/css/jacket-awesome.min.css" />
 	<link rel="stylesheet" href="../vendor/animate.css/animate.min.css" />
 	<link rel="stylesheet" href="../vendor/lato/css/lato.min.css" />
 
@@ -37,9 +37,6 @@
 		}
 		a {
 			color: #a00
-		}
-		.popupContent .content {
-			padding: 10px 20px
 		}
 		.customClass .content {
 			color: #f90;
@@ -132,37 +129,27 @@ $("a").popup({
 
 <script type="text/javascript">
 	$(function () {
-		$("a.basicExample").popup({
-			iconPrefix: "fa"
-		});
+		$("a.basicExample").popup();
 		$(".basicExampleInline").popup({
-			iconPrefix: "fa",
 			target: "#target"
 		});
 		$("a.basicExampleTarget").popup({
-			iconPrefix: "fa",
 			target: "#target"
 		});
 		$("a.basicIframe").popup({
-			iconPrefix: "fa",
 			type: "iframe"
 		});
 		$("a.widthHeightExample").popup({
 			width: 400,
-			height: 100,
-			iconPrefix: "fa"
+			height: 100
 		});
 		$("a.animationExample").popup({
-			iconPrefix: "fa",
 			animation: "bounceInUp"
 		});
 		$("a.customClassExample").popup({
-			iconPrefix: "fa",
 			className: "customClass"
 		});
-		$("a.basicYoutube").popup({
-			iconPrefix: "fa"
-		});
+		$("a.basicYoutube").popup();
 	});
 </script>
 

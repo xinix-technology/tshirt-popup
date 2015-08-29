@@ -14,6 +14,7 @@
 				width: "auto",
 				height: "auto",
 				closeButton: true,
+				closeOutside: true,
 				disableTouchScroll: true,
 				onClick: function () {}
 			},
@@ -87,6 +88,16 @@
 					});
 				}
 
+				// Assign close action to shade area
+				if (settings.closeOutside) {
+					$("#" + settings.id + " > div > div").click(function (e) {
+						if (e.target === this) {
+							popup.close();
+							e.preventDefault();
+						}
+					});
+				}
+
 				// Type of the popup is inline
 				if (settings.type === "inline") {
 					if (url !== undefined) {
@@ -103,7 +114,7 @@
 								}
 
 								$("#" + settings.id + " > div > div > div").addClass("animated " + settings.animation)
-								$("#" + settings.id + " > div > div > div > div").html("<p class='error'><i class='" + settings.iconPrefix +" " + settings.iconPrefix +"-chain-broken " + settings.iconPrefix +"-5x'></i><br />Error while loading your content<br />Please close this popup and try again</p>");
+								$("#" + settings.id + " > div > div > div > div").html("<p class='error'><i class='" + settings.iconPrefix +" " + settings.iconPrefix +"-rocket " + settings.iconPrefix +"-5x'></i><br />Error while loading your content<br />Please close this popup and try again</p>");
 							}
 						});
 					} else if (settings.target !== "") {
@@ -133,5 +144,5 @@
 				e.preventDefault();
 			});
 		});
-	};
+	}
 }(jQuery, window, document));

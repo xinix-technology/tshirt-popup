@@ -6,16 +6,17 @@ T-Shirt Pop Up is a jquery popup plugins made specially with Naked CSS. It's lig
 **Available Configuration**
 
 1. closeButton: true/false, display or hide close button
-2. className: "popupContent", class name for outer wrapper of content div
-3. animation: "bounceIn", see animate.css for available animation class
-4. type: "inline", type of content, right now it's only inline
-5. width: "auto", set the width based of number, px or %
-6. height: "auto", set the height based of number, px or %
-7. url: "". Define the url to use.
-8. id: "popupOverflow", Id for the popup
-9. disableTouchScroll: true/false, Disable scrolling in touch device
-10. iconPrefix: "xn", font-awesome icon prefix
-11. target: "", set selector name for target content both external link or internal element
+2. closeOutside: true/false, make the shade area close the popup on click
+3. className: "popupContent", class name for outer wrapper of content div
+4. animation: "bounceIn", see animate.css for available animation class
+5. type: "inline", type of content, right now it's only inline
+6. width: "auto", set the width based of number, px or %
+7. height: "auto", set the height based of number, px or %
+8. url: "". Define the url to use.
+9. id: "popupOverflow", Id for the popup
+10. disableTouchScroll: true/false, Disable scrolling in touch device
+11. iconPrefix: "xn", font-awesome icon prefix
+12. target: "", set selector name for target content both external link or internal element
 
 **How to use it**
 
