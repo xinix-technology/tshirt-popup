@@ -38,7 +38,17 @@
 
 			if (url !== undefined) {
 				// See if it's a youtube link
-				youtube_id = url.match(/(\?v=|\/\d\/|\/embed\/|\/v\/|\.be\/)([a-zA-Z0-9\-\_]+)/);
+				youtube_id = url.match(/(?:https?:\/\/)?(?:www\.)?youtu\.?be(?:\.com)?\/?.*(?:watch|embed)?(?:.*v=|v\/|\/)([\w\-_]+)\&?/);
+
+				console.log ("1", youtube_id);
+
+				// Just to make sure that the url have youtube's domains
+				if (url.indexOf("youtube.com") <= -1 && url.indexOf("youtu.be") <= -1) {
+					youtube_id = null;
+				}
+
+				console.log ("2", url.indexOf("youtube.com") <= -1, url.indexOf("youtu.be") <= -1, youtube_id);
+
 				if (youtube_id !== null) {
 					settings.type = "iframe";
 				}
@@ -125,7 +135,7 @@
 				// Type of the popup is iframe
 				} else if (settings.type === "iframe") {
 					if (youtube_id !== null) {
-						$("#" + settings.id + " > div > div > div > div").addClass("youtube").html ('<iframe width="800" height="450" src="https://www.youtube.com/embed/' + youtube_id[2] + '" frameborder="0" allowfullscreen></iframe>');
+						$("#" + settings.id + " > div > div > div > div").addClass("youtube").html ('<iframe width="800" height="450" src="https://www.youtube.com/embed/' + youtube_id[1] + '" frameborder="0" allowfullscreen></iframe>');
 					} else {
 						$("#" + settings.id + " > div > div > div > div").html ("<iframe src='" + url + "' width='100%' height='100%' frameborder='0' />");
 					}
