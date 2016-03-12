@@ -1,40 +1,67 @@
 /*
  * T-Shirt Popup
  */
-#popupOverflow { position:fixed; top:0; left:0; right:0; bottom:0; z-index:9999; display:block; background:rgba(0, 0, 0, 0.64) }
-#popupTable { position:fixed; top:0; left:0; display:table; width:100%; height:100% }
-#popupMargin { display:table-cell; vertical-align:middle }
-#popupContent { position:relative; display:table; margin:0 auto; padding:0 16px }
+#popupOverflow { position:fixed; top:0; left:0; right:0; bottom:0; z-index:9999; display:block; background:rgba(0, 0, 0, 0.64); }
+#popupOverflow h4 { margin: 0; color: #444; }
+#popupOverflow h4 i { cursor: pointer; font-size: 0.7em; }
+#popupOverflow p { color: #666; }
+#popupOverflow .content-area .row { margin-bottom: 10px; }
+#popupTable { position:fixed; top:0; left:0; display:table; width:100%; height:100%; }
+#popupMargin { display:table-cell; vertical-align:middle; }
+#popupContent { position:relative; display:table; margin:0 auto; padding:0 16px; }
+#popupContent form { padding: 0; }
+#popupContent hr { margin: 0; }
 #popupContent .content {
-	background:#fff; overflow:hidden; padding:8px 16px;
-	-webkit-border-radius:4px;
-	-moz-border-radius:4px;
-	-ms-border-radius:4px;
-	-o-border-radius:4px;
-	border-radius:4px;
+	background:#fff; 
+	overflow:hidden;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    -ms-border-radius:4px;
+    -o-border-radius:4px;
+    border-radius:4px;
 }
-#popupContent .content.youtube { padding:0; background:#000 }
-
-#popupContent a.close {
-	position:absolute; top:-10px; left:initial; right:6px; background:#fff; color:#000; display:block; padding:0; margin:0; height:24px; width:24px;
+#popupContent .content.youtube { padding:0; background:#000; }
+#popupContent .content>.wrapper { padding: 20px; }
+#popupContent .content .wrapper { padding: 10px 20px; }
+#popupContent a.close { 
+	position:absolute; top:-10px; left:initial; right:6px; background:#fff; color:#000; display:block; padding:0; margin:0; height:24px; width:24px; text-align:center; line-height:24px;
 	-webkit-border-radius:100%;
 	-moz-border-radius:100%;
 	-ms-border-radius:100%;
 	-o-border-radius:100%;
 	border-radius:100%;
 }
-#popupContent a.close:hover { color:#ed2b2b }
-#popupContent a.close i { font-size:22px; line-height:24px; width:24px; text-align:center }
-#popupContent p.loading { padding:24px 32px; margin:0; text-align:center; color:#333 }
-#popupContent p.error { padding:24px 32px; margin:0; text-align:center; color:#919191 }
-#popupContent p.error i { margin:24px 0; color:#d03030 }
-
+#popupContent a.close:hover { color:#ed2b2b; }
+#popupContent a.close i { font-size:22px; line-height:24px; width:24px; text-align:center; margin: 0; padding: 0; }
+#popupContent p.loading { padding:24px 32px; margin:0; text-align:center; color:#333; }
+#popupContent p.error { padding:24px 32px; margin:0; text-align:center; color:#919191; }
+#popupContent p.error i { margin:24px 0; color:#d03030;  }
 #popupContent .actions { margin:0; padding:0; display:block; border-top:1px solid #ccc; margin:0 -16px -8px  }
 #popupContent .actions li { list-style:none; display:table-cell; padding:0; margin:0 }
 #popupContent .actions a { display:block; text-decoration:none; padding:8px 16px}
 #popupContent .actions a:hover { background:#f5f5f5 }
 #popupContent .actions .primary a { font-weight:bold }
+#popupContent .scrollContent { display: block; overflow: auto; margin: 0; height: 300px; }
+#popupContent .button-area .button:last-child { margin-right: 0; }
+#popupContent .button-group { width: 100%; display: table; }
+#popupContent .button-group li { display: table-cell; padding: 0; margin: 0; }
+#popupContent .button-group button,
+#popupContent .button-group .button,
+#popupContent .button-group input[type="submit"],
+#popupContent .button-group input[type="reset"] {
+	font-size: 1.1em; display: block; margin: 0; line-height: 48px; padding: 0; width: 100%; border: 1px solid #e7e7e7; border-left: none; border-bottom: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+}
+#popupContent .button-group li:last-child .button { border-right: 0; }
 
+
+/*================================*/
+/*========== RESPONSIVE ==========*/
+/*================================*/
 @media only screen and (max-width:767px) {
 	#popupContent .content { width:auto!important }
 }
