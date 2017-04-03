@@ -17,6 +17,10 @@ T-Shirt Pop Up is a jquery popup plugins made specially with Naked CSS. It's lig
 10. disableTouchScroll: true/false, Disable scrolling in touch device
 11. iconPrefix: "xn", font-awesome icon prefix
 12. target: "", set selector name for target content both external link or internal element
+13. onClick: function () {}, a callback that fired after popup trigger element clicked (almost like on enter)
+14. onClose: function () {}, a callback that fired after the popup window being closed
+15. afterLoad: function () {}, a callback that fired after all the necessary element loaded (if ajax) and randered
+
 
 **How to use it**
 
