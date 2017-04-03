@@ -16,7 +16,9 @@
 				closeButton: true,
 				closeOutside: true,
 				disableTouchScroll: true,
-				onClick: function () {}
+				onClick: function () {},
+				onClose: function () {},
+				afterLoad: function () {}
 			},
 			popup = this,
 			settings = $.extend({}, defaults, options);
@@ -24,6 +26,8 @@
 		this.close = function () {
 			$("#" + settings.id).fadeOut(128);
 			$("#" + settings.id + " > div > div > div").removeClass("animated " + settings.animation).html("");
+
+			settings.onClose ();
 		};
 
 		return this.each(function () {
@@ -40,14 +44,10 @@
 				// See if it's a youtube link
 				youtube_id = url.match(/(?:https?:\/\/)?(?:www\.)?youtu\.?be(?:\.com)?\/?.*(?:watch|embed)?(?:.*v=|v\/|\/)([\w\-_]+)\&?/);
 
-				console.log ("1", youtube_id);
-
 				// Just to make sure that the url have youtube's domains
 				if (url.indexOf("youtube.com") <= -1 && url.indexOf("youtu.be") <= -1) {
 					youtube_id = null;
 				}
-
-				console.log ("2", url.indexOf("youtube.com") <= -1, url.indexOf("youtu.be") <= -1, youtube_id);
 
 				if (youtube_id !== null) {
 					settings.type = "iframe";
@@ -125,10 +125,13 @@
 
 								$("#" + settings.id + " > div > div > div").addClass("animated " + settings.animation)
 								$("#" + settings.id + " > div > div > div > div").html("<p class='error'><i class='" + settings.iconPrefix +" " + settings.iconPrefix +"-rocket " + settings.iconPrefix +"-5x'></i><br />Error while loading your content<br />Please close this popup and try again</p>");
+
 							}
+							settings.afterLoad ();
 						});
 					} else if (settings.target !== "") {
 						$("#" + settings.id + " > div > div > div > div").html($(settings.target).html ());
+						settings.afterLoad ();
 					}
 
 
@@ -139,6 +142,8 @@
 					} else {
 						$("#" + settings.id + " > div > div > div > div").html ("<iframe src='" + url + "' width='100%' height='100%' frameborder='0' />");
 					}
+
+					settings.afterLoad ();
 				}
 
 				// Display or not close button
